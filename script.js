@@ -21,7 +21,7 @@ function showDetails(name, desc, price, img) {
     document.getElementById("popup-title").innerText = name;
     document.getElementById("popup-desc").innerText = desc;
     document.getElementById("popup-price").innerText = price;
-    document.getElementById("popup-img").src = "assests/"+img;
+    document.getElementById("popup-img").src = "assets/"+img;
 
     // Reset buttons to remove old event listeners
     const addBtn = document.getElementById("add-cart-btn");
