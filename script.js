@@ -24,7 +24,7 @@ function showDetails(name, desc, price, img) {
     document.getElementById("popup-title").innerText = name;
     document.getElementById("popup-desc").innerText = desc;
     document.getElementById("popup-price").innerText = price;
-document.getElementById("popup-img").src = img;
+document.getElementById("popup-img").src ="assets/"+img;
     // SAFE EVENT HANDLING (NO CLONE)
     document.getElementById("add-cart-btn").onclick = () => addToCart(name, price);
     document.getElementById("buy-now-btn").onclick = () => buyNow(name, price);
