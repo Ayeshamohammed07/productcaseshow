@@ -27,7 +27,7 @@ function loadOrders() {
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
     let box = document.getElementById("order-list");
 
-    box.innerHTML = "";
+    box.innerHTML = ""; 
 
     if (orders.length === 0) {
         box.innerHTML = "<p>No orders yet 🛒</p>";

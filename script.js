@@ -1,4 +1,4 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let total = JSON.parse(localStorage.getItem("total")) || 0;
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
@@ -24,22 +24,11 @@ function showDetails(name, desc, price, img) {
     document.getElementById("popup-title").innerText = name;
     document.getElementById("popup-desc").innerText = desc;
     document.getElementById("popup-price").innerText = price;
-    document.getElementById("popup-img").src = "assets/" + img;
-
-    // Reset buttons
-    const addBtn = document.getElementById("add-cart-btn");
-    const buyBtn = document.getElementById("buy-now-btn");
-
-    const newAddBtn = addBtn.cloneNode(true);
-    const newBuyBtn = buyBtn.cloneNode(true);
-
-    addBtn.parentNode.replaceChild(newAddBtn, addBtn);
-    buyBtn.parentNode.replaceChild(newBuyBtn, buyBtn);
-
-    newAddBtn.onclick = () => addToCart(name, price);
-    newBuyBtn.onclick = () => buyNow(name, price);
+document.getElementById("popup-img").src = img;
+    // SAFE EVENT HANDLING (NO CLONE)
+    document.getElementById("add-cart-btn").onclick = () => addToCart(name, price);
+    document.getElementById("buy-now-btn").onclick = () => buyNow(name, price);
 }
-
 function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
