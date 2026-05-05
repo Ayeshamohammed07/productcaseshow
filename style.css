@@ -31,6 +31,8 @@ header{
     z-index:1000;
 }
 
+
+
 .logo{
     width:110px;
     border-radius:10px;
@@ -157,8 +159,27 @@ nav a:hover{
     font-size:18px;
     font-weight:bold;
 }
+.category-buttons button{
+    padding:10px 22px;
+    border:none;
+    border-radius:25px;
+    background:#ff4f81;   /* pure pink */
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 4px 10px rgba(255,79,129,0.3);
+}
 
-/* Products */
+.category-buttons button:hover{
+    background:#ff2f6d;
+    transform: translateY(-3px);
+}
+
+.category-buttons button.active{
+    background:#ff2f6d;
+    transform: scale(1.05);
+}/* Products */
 .products{
     padding:60px 20px;
     text-align:center;
@@ -272,46 +293,74 @@ nav a:hover{
     border-radius:12px;
 }
 
-/* Payments */
-.payments{
-    padding:50px 20px;
-    text-align:center;
+.payments {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.payment-icons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+.payments h2 {
+    color: #ff4f81;
+    font-size: 32px;
+    margin-bottom: 30px;
 }
 
-.payment-icons div{
-    background:#fff5f8;
-    padding:15px 20px;
-    border-radius:10px;
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Newsletter */
-.newsletter{
-    padding:50px 20px;
-    text-align:center;
-    background:#fff5f8;
+.payment-icons div {
+    background: #f8f2f5;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
-.newsletter-box{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
+.payment-icons div:hover {
+    transform: translateY(-5px);
+}
+.newsletter {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f8f2f5;
 }
 
-.newsletter-box input{
-    padding:12px;
-    width:250px;
-    border-radius:8px;
-    border:1px solid #ccc;
+.newsletter h2 {
+    color: #ff4f81;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
+.newsletter p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.newsletter-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.newsletter-box input {
+    padding: 12px 15px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.newsletter-box button {
+    padding: 12px 25px;
+    border: none;
+    background: #ff4f81;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
 /* Footer */
 footer{
     background:#111;
@@ -381,29 +430,39 @@ footer{
 
 /* Mobile */
 @media(max-width:768px){
+    .newsletter-box {
+        flex-direction: column;
+    }
 
-header{
-    flex-direction:column;
-}
+    .newsletter-box input {
+        width: 100%;
+    }
 
-nav{
-    justify-content:center;
-}
+    .payment-icons {
+        gap: 10px;
+    }
 
-.search-box input{
-    width:140px;
-}
+    header{
+        flex-direction: column;
+    }
 
-.hero{
-    height:60vh;
-}
+    nav{
+        justify-content: center;
+    }
 
-.overlay h1{
-    font-size:26px;
-}
+    .search-box input{
+        width: 140px;
+    }
 
-.overlay p{
-    font-size:14px;
-}
+    .hero{
+        height: 60vh;
+    }
 
+    .overlay h1{
+        font-size: 26px;
+    }
+
+    .overlay p{
+        font-size: 14px;
+    }
 }

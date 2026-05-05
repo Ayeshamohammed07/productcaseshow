@@ -207,6 +207,14 @@ function searchProducts() {
 
 function filterProducts(category) {
     let cards = document.getElementsByClassName("card");
+    let buttons = document.querySelectorAll(".category-buttons button");
+
+    // remove active class from all buttons
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    // add active to clicked button
+    event.target.classList.add("active");
+
     for (let card of cards) {
         if (category === 'all' || card.classList.contains(category)) {
             card.style.display = "block";
@@ -215,7 +223,6 @@ function filterProducts(category) {
         }
     }
 }
-
 function subscribeNewsletter() {
     let email = document.getElementById("newsletter-email").value;
     if (email.includes("@")) {
